@@ -93,7 +93,7 @@ export default function ServicesPage({ tenantSlug }: ServicesPageProps) {
                     <TableCell className="font-medium">{service.name}</TableCell>
                     <TableCell>{service.duration} min</TableCell>
                     <TableCell>
-                      {service.price ? `$${(service.price / 100).toFixed(2)}` : '-'}
+                      {service.price ? `$${service.price.toFixed(2)}` : '-'}
                     </TableCell>
                     <TableCell>
                       {service.active ? 'Activo' : 'Inactivo'}

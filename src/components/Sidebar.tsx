@@ -50,12 +50,12 @@ export default function Sidebar({ tenantName = 'Mi Negocio' }: SidebarProps) {
             return (
               <Button
                 key={item.href}
-                variant={isActive ? 'secondary' : 'ghost'}
+                variant="ghost"
                 className={cn(
-                  'w-full justify-start gap-2',
-                  isActive && 'bg-secondary'
+                  'w-full justify-start gap-2 transition-colors hover:bg-zinc-200'
                 )}
                 onClick={() => handleNavigate(item.href)}
+                aria-current={isActive ? 'page' : undefined}
               >
                 <Icon className="h-4 w-4" />
                 {item.label}

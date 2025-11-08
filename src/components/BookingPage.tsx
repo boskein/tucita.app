@@ -241,7 +241,7 @@ export default function BookingPage({ tenantSlug }: BookingPageProps) {
                   {services.map((service) => (
                     <SelectItem key={service.id} value={service.id}>
                       {service.name} - {service.duration} min
-                      {service.price && ` ($${(service.price / 100).toFixed(2)})`}
+                      {service.price && ` ($${service.price.toFixed(2)})`}
                     </SelectItem>
                   ))}
                 </SelectContent>

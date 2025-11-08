@@ -2,12 +2,6 @@
 import AppLayout from '../../../../layouts/AppLayout.astro';
 import BookingsPage from '../../../../components/BookingsPage';
 
-export async function getStaticPaths() {
-  return [
-    { params: { t: 't', slug: 'barberia-elite' } },
-  ];
-}
-
 const { slug } = Astro.params;
 const tenantSlug = slug || '';
 ---

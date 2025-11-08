@@ -12,4 +12,5 @@ export default defineConfig({
 	},
 
   integrations: [react()],
+  output: 'server', // Enable SSR for dynamic routes
 });

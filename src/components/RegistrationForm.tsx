@@ -53,7 +53,13 @@ export default function RegistrationForm() {
 
   const onSubmit = async (data: BusinessRegistrationInput) => {
     try {
-      const tenant = await createTenant(data);
+      const tenant = await createTenant({
+        name: data.businessName,
+        category: data.category,
+        timezone: data.timezone,
+        ownerName: data.ownerName,
+        ownerEmail: data.ownerEmail,
+      });
       toast.success('¡Cuenta creada exitosamente!');
       // Redirect to onboarding
       window.location.href = `/t/${tenant.slug}/onboarding`;

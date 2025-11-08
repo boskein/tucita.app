@@ -37,7 +37,7 @@ export async function seedDemoData(): Promise<void> {
     await createService(tenant.id, {
       name: 'Corte de cabello',
       duration: 30,
-      price: 2500, // $25.00 in cents
+      price: 25.00,
       employeeIds: [], // All employees can provide this
       active: true,
     });

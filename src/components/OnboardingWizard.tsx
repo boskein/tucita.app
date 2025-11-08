@@ -113,7 +113,7 @@ export default function OnboardingWizard({ tenantSlug }: OnboardingWizardProps) 
                           <p className="font-semibold">{service.name}</p>
                           <p className="text-sm text-muted-foreground">
                             {service.duration} min
-                            {service.price && ` - $${(service.price / 100).toFixed(2)}`}
+                            {service.price && ` - $${service.price.toFixed(2)}`}
                           </p>
                         </div>
                       </div>

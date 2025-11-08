@@ -1,6 +1,7 @@
 import type { Tenant, User } from '../types';
 import { generateSlug } from '../subdomain';
 import { createOwnerUser } from './mockUser';
+import { createDefaultOwnerEmployee } from './mockStaff';
 import { tenants, users } from './store';
 
 /**
@@ -48,6 +49,9 @@ export async function createTenant(input: CreateTenantInput): Promise<Tenant> {
     name: input.ownerName,
     email: input.ownerEmail,
   });
+  
+  // Create owner employee
+  await createDefaultOwnerEmployee(id, input.ownerName);
   
   return tenant;
 }

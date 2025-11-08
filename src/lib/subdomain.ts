@@ -44,7 +44,10 @@ export function validateTenantSlug(slug: string): boolean {
 /**
  * Generate slug from business name
  */
-export function generateSlug(name: string): string {
+export function generateSlug(name: string | undefined | null): string {
+  if (!name || typeof name !== 'string') {
+    return 'business';
+  }
   return name
     .toLowerCase()
     .normalize('NFD')
