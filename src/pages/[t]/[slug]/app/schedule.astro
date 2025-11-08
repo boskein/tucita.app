@@ -1,0 +1,17 @@
+---
+import AppLayout from '../../../../layouts/AppLayout.astro';
+import SchedulePage from '../../../../components/SchedulePage';
+
+export async function getStaticPaths() {
+  return [
+    { params: { t: 't', slug: 'barberia-elite' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const tenantSlug = slug || '';
+---
+
+<AppLayout title="Horarios" tenantName="Mi Negocio">
+  <SchedulePage client:load tenantSlug={tenantSlug} />
+</AppLayout>

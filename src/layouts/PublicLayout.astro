@@ -1,0 +1,26 @@
+---
+import Navbar from '../components/Navbar';
+import { Toaster } from '../components/ui/sonner';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Tucitas.app - Sistema de Reservas</title>
+  </head>
+  <body>
+    <Navbar client:load />
+    <main>
+      <slot />
+    </main>
+    <footer class="border-t mt-auto py-8 text-center text-muted-foreground">
+      <p>&copy; 2024 Tucitas.app. Todos los derechos reservados.</p>
+    </footer>
+    <Toaster client:load />
+  </body>
+</html>
