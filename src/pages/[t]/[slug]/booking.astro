@@ -1,0 +1,17 @@
+---
+import PublicLayout from '../../../layouts/PublicLayout.astro';
+import BookingPage from '../../../components/BookingPage';
+
+export async function getStaticPaths() {
+  return [
+    { params: { t: 't', slug: 'barberia-elite' } },
+  ];
+}
+
+const { slug } = Astro.params;
+const tenantSlug = slug || '';
+---
+
+<PublicLayout>
+  <BookingPage client:load tenantSlug={tenantSlug} />
+</PublicLayout>

@@ -1,0 +1,22 @@
+---
+import AppLayout from '../../../layouts/AppLayout.astro';
+import OnboardingWizard from '../../../components/OnboardingWizard';
+
+export async function getStaticPaths() {
+  // For MVP: return demo tenant and allow dynamic creation
+  // In production, this would fetch from API
+  return [
+    { params: { t: 't', slug: 'barberia-elite' } },
+  ];
+}
+
+const { t, slug } = Astro.params;
+const tenantSlug = slug || '';
+
+// In a real app, we'd fetch the tenant here
+// For now, we'll let the component handle it
+---
+
+<AppLayout title="Configuración inicial" tenantName="Mi Negocio">
+  <OnboardingWizard client:load tenantSlug={tenantSlug} />
+</AppLayout>

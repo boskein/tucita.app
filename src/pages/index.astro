@@ -1,0 +1,43 @@
+---
+import PublicLayout from '../layouts/PublicLayout.astro';
+import { Button } from '../components/ui/button';
+---
+
+<PublicLayout>
+  <div class="container mx-auto px-4 py-16">
+    <section class="text-center max-w-3xl mx-auto mb-16">
+      <h1 class="text-5xl font-bold mb-6">
+        Gestiona tus citas de forma sencilla
+      </h1>
+      <p class="text-xl text-muted-foreground mb-8">
+        Tucitas.app te ayuda a administrar reservas, horarios y personal de tu negocio.
+      </p>
+      <a href="/register">
+        <Button size="lg" class="text-lg px-8 py-6">
+          Empieza gratis
+        </Button>
+      </a>
+    </section>
+
+    <section class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div class="text-center p-6">
+        <h3 class="text-2xl font-semibold mb-4">Fácil de usar</h3>
+        <p class="text-muted-foreground">
+          Interfaz intuitiva para gestionar tus reservas sin complicaciones.
+        </p>
+      </div>
+      <div class="text-center p-6">
+        <h3 class="text-2xl font-semibold mb-4">Horarios flexibles</h3>
+        <p class="text-muted-foreground">
+          Configura horarios semanales y excepciones según tus necesidades.
+        </p>
+      </div>
+      <div class="text-center p-6">
+        <h3 class="text-2xl font-semibold mb-4">Multi-empleado</h3>
+        <p class="text-muted-foreground">
+          Gestiona múltiples empleados y asigna servicios específicos.
+        </p>
+      </div>
+    </section>
+  </div>
+</PublicLayout>

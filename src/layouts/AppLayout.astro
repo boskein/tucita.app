@@ -1,0 +1,37 @@
+---
+import Sidebar from '../components/Sidebar';
+import { Toaster } from '../components/ui/sonner';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  tenantName?: string;
+}
+
+const { title = 'Dashboard', tenantName = 'Mi Negocio' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} - Tucitas.app</title>
+  </head>
+  <body class="min-h-screen bg-background">
+    <div class="flex h-screen overflow-hidden">
+      <Sidebar client:load tenantName={tenantName} />
+      <div class="flex-1 flex flex-col overflow-hidden">
+        <header class="border-b px-6 py-4">
+          <h1 class="text-2xl font-semibold">{title}</h1>
+        </header>
+        <main class="flex-1 overflow-y-auto p-6">
+          <slot />
+        </main>
+      </div>
+    </div>
+    <Toaster client:load />
+  </body>
+</html>
